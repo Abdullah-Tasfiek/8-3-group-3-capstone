@@ -133,7 +133,7 @@ const NavBar = ({ loggedIn, logOut }) => {
           <a href="/users" className="text-logored">
             Explore
           </a>
-          <a href="/lkes" className="text-logored">
+          <a href="/matches" className="text-logored">
             Matches
           </a>
           <a href="/myprofile" className="text-logored">
