@@ -4,8 +4,8 @@ Group members: Abdullah, Hermanclyde, Edwin, Charlie
 
 ## Important Links
 
-- [Deployed API Server](https://table-for-two.onrender.com/)
-- [Deployed Frontend](https://table-for-two.netlify.app/)
+- [Deployed API Server](https://table-for-two-fspp.onrender.com/)
+- [Deployed Frontend](https://table-for-two-fspp.netlify.app/)
 - [ERD](https://miro.com/welcomeonboard/YnVXSnZvTlhwb2F3QTBraUpRNk5yY3c4NE80ejV1Tkk0aEd4QklTWmpwUGdxYWViQ0VjZWdRcDl2V2I3azRLU3wzNDU4NzY0NTE2MDUxNjI4OTA0fDI=?share_link_id=967288889386)
 - [Wireframes](https://drive.google.com/drive/folders/11DC6EPNxv3BIedICKvRV54irdkBUtvnw?usp=sharing)
 - [Systems Design Diagram](https://miro.com/welcomeonboard/NTNEMWFlUWkwem5JN1g3Q1FGdFpNam9lajQwelFmM1FvaWFuMzYzOTFDMFNUZVBJS0FjaE45UmhKSUY0b3k4Z3wzNDU4NzY0NTE2MDUxNjI4OTA0fDI=?share_link_id=836752356988)
