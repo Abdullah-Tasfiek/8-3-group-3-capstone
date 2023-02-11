@@ -13,6 +13,7 @@ module.exports = {
         green: "#DAE3C9",
         red: "#AE2A3F", //text
         rosered: "#BE123C", //clickable text
+        blue: "#3982F8", //messenger bubble blue
       },
     },
     screens: {

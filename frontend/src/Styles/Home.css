@@ -5,3 +5,12 @@ body {
     height: 100vh;
     position: relative;
   }
+
+  .middle {
+    margin-top: 40%;
+    background-color: #F1EADF;
+  }
+
+  .header-div {
+    margin-top: 150px;
+  }

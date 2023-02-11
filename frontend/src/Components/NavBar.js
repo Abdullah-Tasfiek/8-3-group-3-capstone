@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import "../Styles/NavBar.css";
+import "../Styles/NavBar.css";
 
 const NavBar = ({ loggedIn, logOut }) => {
   const navigate = useNavigate();
@@ -20,8 +20,8 @@ const NavBar = ({ loggedIn, logOut }) => {
           className="flex items-center justify-between text-white font-fonts"
         >
           {/* Logo */}
-          <Link className="text-5xl p-4 font-medium" to="/">
-            <h2>Table For Two</h2>
+          <Link className="text-5xl p-4 font-medium " to="/">
+            <h2 className="drop-shadow-2xl">Table For Two</h2>
           </Link>
           <div className={"space-x-40 " + (loggedIn ? "show" : "hidden")}>
             <Link className="hover:text-red-800" to="/users">
@@ -61,7 +61,7 @@ const NavBar = ({ loggedIn, logOut }) => {
               ) : (
                 <Link
                   to="/signin"
-                  class="bg-white hover:bg-grey-300 text-black font-fonts py-4 px-10 mx-10 rounded-full text-xl font-medium"
+                  class="bg-white hover:bg-grey-300 text-black font-fonts py-4 px-10 mx-10 rounded-full text-lg font-medium"
                 >
                   Log In
                 </Link>
