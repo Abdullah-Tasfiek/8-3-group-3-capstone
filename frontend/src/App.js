@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import FoodsPage from "./Pages/FoodsPage.js";
-import HomePage from "./Pages/home.js";
-import Nav from "./Pages/navbar.js";
+import HomePage from "./Pages/HomePage.js";
+import Nav from "./Pages/NavBar.js";
 import UserPage from "./Pages/UserPage.js";
 import Recipe from "./Pages/Recipe.js";
 import ExpandedUser from "./Pages/ExpandedUser.js";
@@ -21,6 +21,7 @@ import MatchesPage from "./Pages/MatchesPage.js";
 import Matches from "./Components/Matches.js";
 import axios from "axios";
 import NavBar from "./Components/NavBar.js";
+import HeaderBodyImage from "./Components/NavBar.js";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -84,10 +85,13 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <NavBar loggedIn={loggedIn} logOut={logOut} />
-      <main className="bg-beige">
+      <NavBar
+        loggedIn={loggedIn}
+        logOut={logOut}
+      />
+      <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
           <Route path="/myfoods" element={<FoodsPage />} />
           <Route path="/users" element={<UserPage user={user} />} />
           <Route path="/recipe" element={<Recipe />} />

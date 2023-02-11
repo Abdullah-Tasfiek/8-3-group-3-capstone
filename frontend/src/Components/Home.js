@@ -1,41 +1,33 @@
-import { Link } from "react-router-dom";
 import "../Styles/Home.css";
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50 && !animated) {
+        setAnimated(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [animated]);
+
   return (
-    <div className="LandingBlurb bg-beige">
-      <h1 className="font-fonts text-rose-700 text-7xl font-semibold my-6">
-        Table for Two
-      </h1>
-      <div className="flex flex-wrap">
-        <div className="w-1/12 sm:w-5/12 px-4 py-2">
-          <img
-            src={require("../Assets/couple-eating-sweets-and-snacks-2472751.png")}
-            alt="..."
-            className="rounded-full max-w-md max-h-full border-none py-2"
-          />
-        </div>
-      </div>
-      <p className="font-fonts text-3xl font-semibold text-rose-700">
-        Eating is a lifestyle
-      </p>
-      <p className="font-fonts text-3xl font-semibold text-rose-700">
-        Find a partner based on your diet!
-      </p>
-      <div>
+    <div className={`text ${animated ? "animated" : ""}`}>
+      <div className="text-center text-7xl font-bold font-fonts grid content-center my-18">
+        <h2 className="text-white drop-shadow-2xl">Eating is a lifestyle </h2>
         <br></br>
-        <Link to="/register">
-          <button className="bg-rose-500 hover:bg-blue-700 text-white font-bold py-6 px-20 rounded-full">
-            Sign Up
-          </button>
-        </Link>
+        <h2 className="text-white drop-shadow-2xl">
+          Find a partner based on your diet
+        </h2>
       </div>
-      <br></br>
-      <Link to="/signin">
-        <button className="bg-purple-900 hover:bg-blue-700 text-white font-bold py-6 px-20 rounded-full space-y-4">
-          Sign In
-        </button>
-      </Link>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96">Hello</div>
     </div>
   );
 }

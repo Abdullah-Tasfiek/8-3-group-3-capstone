@@ -28,3 +28,11 @@
   .showMenu {
     transform: translateY(0);
   }
+
+  .nav {
+    background-image: url("../Assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }

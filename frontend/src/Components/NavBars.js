@@ -1,6 +1,5 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import "../Styles/NavBar.css";
+import React from "react";
 
 const NavBar = ({ loggedIn, logOut }) => {
   const navigate = useNavigate();
@@ -12,17 +11,16 @@ const NavBar = ({ loggedIn, logOut }) => {
     nav.classList.toggle("flex");
     nav.classList.toggle("hidden");
   };
+
   return (
     <nav>
-      <div className="nav">
-        <div
-          style={{ position: "sticky", top: 0 }}
-          className="flex items-center justify-between text-white font-fonts"
-        >
-          {/* Logo */}
-          <Link className="text-5xl p-4 font-medium" to="/">
-            <h2>Table For Two</h2>
-          </Link>
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link className="hover:text-red-800" to="/">
+          <h2>Table For Two</h2>
+        </Link>
+        {/* Navbar Routes*/}
+        <div className="hidden md:flex space-x-40 pr-30 text-2xl">
           <div className={"space-x-40 " + (loggedIn ? "show" : "hidden")}>
             <Link className="hover:text-red-800" to="/users">
               <button>
@@ -46,7 +44,7 @@ const NavBar = ({ loggedIn, logOut }) => {
               </button>
             </Link>
           </div>
-          <Link className="p-4">
+          <Link className="hover:text-red-800">
             <button>
               {loggedIn ? (
                 <Link to="/signin">
@@ -59,17 +57,13 @@ const NavBar = ({ loggedIn, logOut }) => {
                   </div>
                 </Link>
               ) : (
-                <Link
-                  to="/signin"
-                  class="bg-white hover:bg-grey-300 text-black font-fonts py-4 px-10 mx-10 rounded-full text-xl font-medium"
-                >
-                  Log In
+                <Link to="/signin">
+                  <h2>Log In</h2>
                 </Link>
               )}
             </button>
           </Link>
         </div>
-
         {/* Hamburger Icon */}
         <button
           onClick={handleClick}
@@ -82,25 +76,23 @@ const NavBar = ({ loggedIn, logOut }) => {
         </button>
       </div>
       {/* Mobile Menu */}
-      <div>
-        <div className="md:hidden">
-          <div
-            id="menu"
-            className="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 bg-green sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
-          >
-            <a href="/users" className="text-logored">
-              Explore
-            </a>
-            <a href="/matches" className="text-logored">
-              Matches
-            </a>
-            <a href="/myprofile" className="text-logored">
-              My Profile
-            </a>
-            <a href="/" className="text-logored">
-              {loggedIn ? "Sign Out" : "Sign In"}
-            </a>
-          </div>
+      <div className="md:hidden">
+        <div
+          id="menu"
+          className="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 bg-green sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="/users" className="text-logored">
+            Explore
+          </a>
+          <a href="/matches" className="text-logored">
+            Matches
+          </a>
+          <a href="/myprofile" className="text-logored">
+            My Profile
+          </a>
+          <a href="/" className="text-logored">
+            {loggedIn ? "Sign Out" : "Sign In"}
+          </a>
         </div>
       </div>
     </nav>

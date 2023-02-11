@@ -1,12 +1,7 @@
-.LandingBlurb{
-    display: grid;
-    justify-items: center;
-    padding-bottom: 10em;
-    border-radius: 1em;
-    padding: 0;
-}
-section {
-    max-width: vw;
-    min-height: vh;
-    padding-bottom: 2em;
-}
+body {
+    background-image: url("../Assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }
