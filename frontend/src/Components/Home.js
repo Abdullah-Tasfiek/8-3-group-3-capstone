@@ -2,22 +2,19 @@ import "../Styles/Home.css";
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
-  const [animated, setAnimated] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50 && !animated) {
-        setAnimated(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [animated]);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
 
   return (
-    <div className={`text ${animated ? "animated" : ""} my-30`}>
+    <div className="my-30">
+      {/* {loading ? <img src={require("../Assets/TableForTwoLogo.png")} className="reload"/> : 
+      <> */}
       <div className="header-div text-center text-7xl font-bold font-fonts grid content-center my-20">
         <h2 className="text-white drop-shadow-2xl">Eating is a lifestyle </h2>
         <br></br>
@@ -52,6 +49,8 @@ export default function Home() {
         </div>
       </div>
       <div className="">Support Stuff</div>
+      {/* </>
+      } */}
     </div>
   );
 }

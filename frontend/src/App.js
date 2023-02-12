@@ -29,6 +29,7 @@ function App() {
   const [user, setUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [firebaseId, setFirebaseId] = useState("");
+  
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -83,15 +84,13 @@ function App() {
         });
       });
   };
+  
   return (
     <BrowserRouter>
-      <NavBar
-        loggedIn={loggedIn}
-        logOut={logOut}
-      />
+      <NavBar loggedIn={loggedIn} logOut={logOut} />
       <main>
         <Routes>
-        <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/myfoods" element={<FoodsPage />} />
           <Route path="/users" element={<UserPage user={user} />} />
           <Route path="/recipe" element={<Recipe />} />
