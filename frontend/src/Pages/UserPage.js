@@ -1,9 +1,8 @@
 import UserProfile from "../Components/UserProfile.js";
-import Checklist from "../Components/Checklist.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { context } from "../AuthContext";
+// import TinderCard from "react-tinder-card";
 
 /**
  * capitalizes first letter and no trailing spaces in string given.
@@ -40,11 +39,12 @@ const normalizeListOfWords = (words) => {
   // join normalized words in a comma separated string and return
 };
 
-export default function UserPage({ user }) {
+export default function UserPage({ user, info, signedInUser }) {
   const [currentFilter, setCurrentFilter] = useState("");
   const URL = process.env.REACT_APP_API_URL;
   const [users, setUsers] = useState([]);
   const [dietaryRestrictions, setDietaryResctrions] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   //let dietary_restrictions = ["Vegan", "Kosher"]; //a list of unique dietary restrictions to filter by.
   // const uniqueRestrictions = () => {
@@ -71,6 +71,25 @@ export default function UserPage({ user }) {
       .catch((err) => console.warn(err.message.payload));
   }, [URL]);
 
+  const handleSwipe = (direction) => {
+    // Handle swipe event, e.g. send a message to the server indicating interest
+
+    if (direction === "left") {
+      axios.delete(`${URL}/likes/${signedInUser.id}/${info.id}`).then(() => {
+        setIsLiked(false);
+      });
+    } else {
+      axios
+        .post(`${URL}/likes`, {
+          liker_id: signedInUser.id,
+          liked_id: info.id,
+        })
+        .then(() => {
+          setIsLiked(true);
+        });
+    }
+  };
+
   return (
     <section>
       {/* <Checklist
@@ -78,6 +97,7 @@ export default function UserPage({ user }) {
         restrictions={dietaryRestrictions}
       /> */}
       <UserProfile user={user} currentFilter={currentFilter} users={users} />
+
       <Link to="/">
         <img src={require("../Assets/previous.png")} alt="Back" />
       </Link>

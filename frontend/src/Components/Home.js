@@ -1,15 +1,6 @@
 import "../Styles/Home.css";
-import React, { useState, useEffect } from "react";
 
 export default function Home() {
-  // const [loading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, []);
 
   return (
     <div className="my-30">
@@ -38,6 +29,22 @@ export default function Home() {
             to eat on your profile!
           </div>
           <br></br>
+          <div className="rounded-full bg-logopurple text-white p-12 mx-12 my-10">
+            The main inspiration for Table For Two stems from making ones
+            dietary restrictions represented in todays dating ecosystem. For
+            example, if someone can only eat Halal foods or if someone must eat
+            a gluten-free diet. Diets can affect your health, social
+            interaction, and finances. We believe finding a partner that share a
+            similar diet as you can compliment your lifestlye more seamlessly.
+          </div>
+          <div className="rounded-full bg-logopurple text-white p-12 mx-12 my-10">
+            The main inspiration for Table For Two stems from making ones
+            dietary restrictions represented in todays dating ecosystem. For
+            example, if someone can only eat Halal foods or if someone must eat
+            a gluten-free diet. Diets can affect your health, social
+            interaction, and finances. We believe finding a partner that share a
+            similar diet as you can compliment your lifestlye more seamlessly.
+          </div>
           <div className="rounded-full bg-logopurple text-white p-12 mx-12 my-10">
             The main inspiration for Table For Two stems from making ones
             dietary restrictions represented in todays dating ecosystem. For

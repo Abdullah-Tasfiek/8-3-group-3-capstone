@@ -8,6 +8,7 @@ export default function Match({ match }) {
       <div className="flex flex-col items-center">
         <Link to={`/users/${match.id}`}>
           <img
+            alt="match"
             src={match.image}
             className="rounded-full border-4 border-logored max-h-56"
           />

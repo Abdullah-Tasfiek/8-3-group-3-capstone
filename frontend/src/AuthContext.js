@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import app, { auth } from "./Firebase.js";
+import { auth } from "./Firebase.js";
 import React from "react";
 import axios from "axios";
 

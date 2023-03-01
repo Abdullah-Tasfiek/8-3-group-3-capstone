@@ -1,9 +1,31 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "../Styles/NavBar.css";
 
 const NavBar = ({ loggedIn, logOut }) => {
-  const navigate = useNavigate();
+  const [textColor, setTextColor] = useState("white");
+  const [bacgkroundColor, setBackgroundColor] = useState("white");
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY < 952) {
+        setTextColor("white");
+      } else {
+        setTextColor("black");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const style = {
+    color: textColor,
+  };
   const handleClick = () => {
     const btn = document.getElementById("menu-btn");
     const nav = document.getElementById("menu");
@@ -21,7 +43,9 @@ const NavBar = ({ loggedIn, logOut }) => {
         >
           {/* Logo */}
           <Link className="text-5xl p-4 font-medium " to="/">
-            <h2 className="drop-shadow-2xl">Table For Two</h2>
+            <h2 className="drop-shadow-2xl" style={style}>
+              Table For Two
+            </h2>
           </Link>
           <div className={"space-x-40 " + (loggedIn ? "show" : "hidden")}>
             <Link className="hover:text-red-800" to="/users">

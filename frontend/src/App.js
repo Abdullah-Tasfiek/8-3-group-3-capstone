@@ -1,7 +1,6 @@
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FoodsPage from "./Pages/FoodsPage.js";
 import HomePage from "./Pages/HomePage.js";
-import Nav from "./Pages/NavBar.js";
 import UserPage from "./Pages/UserPage.js";
 import Recipe from "./Pages/Recipe.js";
 import ExpandedUser from "./Pages/ExpandedUser.js";
@@ -12,16 +11,13 @@ import Register from "./Components/Register.js";
 import SignIn from "./Components/SignIn.js";
 import Footer from "./Components/Footer.js";
 import EditPage from "./Pages/EditPage.js";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { ToastContainer, toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import app, { auth } from "./Firebase.js";
-import MatchesPage from "./Pages/MatchesPage.js";
+import {onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "./Firebase.js";
 import Matches from "./Components/Matches.js";
 import axios from "axios";
 import NavBar from "./Components/NavBar.js";
-import HeaderBodyImage from "./Components/NavBar.js";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -29,7 +25,6 @@ function App() {
   const [user, setUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [firebaseId, setFirebaseId] = useState("");
-  
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -84,7 +79,7 @@ function App() {
         });
       });
   };
-  
+
   return (
     <BrowserRouter>
       <NavBar loggedIn={loggedIn} logOut={logOut} />
@@ -92,7 +87,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/myfoods" element={<FoodsPage />} />
-          <Route path="/users" element={<UserPage user={user} />} />
+          <Route
+            path="/users"
+            element={
+              <UserPage user={user} />
+            }
+          />
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/register" element={<Register />} />

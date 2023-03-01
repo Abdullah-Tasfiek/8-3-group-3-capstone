@@ -6,7 +6,7 @@ export default function Footer() {
     <footer class="footer p-4 shadow md:flex md:items-center md:justify-between md:p-6 bg-white">
       <span class="fonts-font text-sm sm:text-center text-grey">
         © 2022{" "}
-        <a class="hover:underline">
+        <a href="/" class="hover:underline">
           Table For Two™
         </a>
         . All Rights Reserved.

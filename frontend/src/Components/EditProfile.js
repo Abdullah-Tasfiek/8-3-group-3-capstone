@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../Styles/Edit.css";
-import { context } from "../AuthContext";
 
 const API = process.env.REACT_APP_API_URL;
 

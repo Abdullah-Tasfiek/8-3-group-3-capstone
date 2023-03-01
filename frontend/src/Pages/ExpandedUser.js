@@ -1,9 +1,6 @@
-import UserProfile from "../Components/UserProfile.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Group from "./Group";
 import { Link } from "react-router-dom";
-import { months, calcButtonTextColor } from "../Tools";
 import axios from "axios";
 
 export default function EditableUserProfile() {
@@ -22,6 +19,7 @@ export default function EditableUserProfile() {
       <div className="flex flex-col md:flex-row  overflow-hidden shadow-lg border-double border-4 border-black-600 ...">
         <div class="h-240 w-auto md:w-1/2 rounded-lg">
           <img
+            alt="info"
             class="inset-0 h-240 w-full object-cover object-center border-solid border-2 border-black-600 rounded-full border-logored ... "
             src={info.image}
           />
@@ -29,7 +27,7 @@ export default function EditableUserProfile() {
         <div className="w-full py-4 px-6 text-gray-800 inline-block p-0">
           <h2 className="font-fonts text-5xl leading-tight truncate text-red">
             {info.name}, {info.age}
-          </h2>{" "}
+          </h2>
           <br />
           {/* <Group>
             <h2 className="font-semibold text-lg leading-tight truncate font-fonts text-red">
@@ -66,7 +64,7 @@ export default function EditableUserProfile() {
             {info.about_me}
           </div>
         </div>
-        <h2 className="font-semibold text-lg leading-tight font-fonts text-red inline-block"></h2>{" "}
+        <div className="font-semibold text-lg leading-tight font-fonts text-red inline-block"></div>
         <br />
         <div className="flex flex-col items-center">
           {/* <button className="LikeButton">

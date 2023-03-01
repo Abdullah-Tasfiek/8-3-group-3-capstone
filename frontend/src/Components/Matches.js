@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Match from "../Components/Match";
 
 const API = process.env.REACT_APP_API_URL;

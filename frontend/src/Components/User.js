@@ -1,7 +1,6 @@
 //Treating signedInUser image as a string since there are no images.
 //Merge Text
 import { Link } from "react-router-dom";
-import LikedPush from "./LikedPush";
 import { useEffect, useState } from "react";
 import axios from "axios";
 

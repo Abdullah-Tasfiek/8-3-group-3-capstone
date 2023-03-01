@@ -1,10 +1,6 @@
-import axios from 'axios';
 import '../Styles/UserProfile.css';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import User from './User';
 import '../Styles/UserProfiles.css';
-import LikedPush from './LikedPush';
 
 export default function UserProfile({ currentFilter, users, user }) {
   return (
